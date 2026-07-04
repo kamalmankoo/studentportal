@@ -1,0 +1,62 @@
+﻿@model mymainproject.Models.Student
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<h2>@((Model?.Id ?? 0) == 0 ? "Add Student" : "Edit Student")</h2>
+
+<form asp-action="Upsert" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>Age</label>
+        <input asp-for="Age" type="number" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+
+    <div>
+        <label>Phone</label>
+        <input asp-for="Phone" />
+    </div>
+
+    <div>
+        <label>Address</label>
+        <input asp-for="Address" />
+    </div>
+
+    <div>
+        <label>Year</label>
+        <input asp-for="Year" type="number" />
+    </div>
+
+
+    <div>
+        <label>Course</label>
+
+        <select asp-for="CourseId">
+            <option value="">-- Select Course --</option>
+
+            @foreach (var course in Model.Courses)
+            {
+                <option value="@course.Id">
+                    @course.CourseName
+                </option>
+            }
+        </select>
+    </div>
+    <button type="submit">
+        @(Model.Id == 0 ? "Create" : "Update")
+    </button>
+
+</form>

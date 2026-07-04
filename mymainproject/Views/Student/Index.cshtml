@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewData["Title"] = "Dashboard";
+}
+
+@model List<Student>
+
+<h2>Student List</h2>
+
+<a asp-controller="Student" asp-action="Upsert">+ Add Student</a>
+@if(Model!=null)
+{
+    <table border="1" width="100%">
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Name</td>
+                <td>@s.Age</td>
+                <td>@s.Course.CourseName</td>
+                <td>
+                    <a asp-action="Upsert" asp-route-id="@s.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </table>
+}

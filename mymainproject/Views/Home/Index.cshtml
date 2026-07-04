@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+    body {
+        background: #f6f7fb;
+    }
+
+    .nav-top {
+        background: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .brand {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 90px 20px 60px;
+    }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 15px auto;
+        }
+
+    .btn-main {
+        background: #111;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 5px;
+        display: inline-block;
+    }
+
+    .btn-outline {
+        border: 1px solid #111;
+        color: #111;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 5px;
+        display: inline-block;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px 60px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: 0.3s;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h4 {
+            margin-bottom: 10px;
+        }
+
+    .footer {
+        text-align: center;
+        padding: 30px;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .dot {
+        color: #4f46e5;
+    }
+</style>
+
+<!-- NAVBAR -->
+<div class="nav-top">
+    <div class="brand">Student<span class="dot">.</span>System</div>
+
+    <div>
+        <a asp-area="Identity" asp-page="/Account/Login" class="btn-outline">Login</a>
+        <a asp-area="Identity" asp-page="/Account/Register" class="btn-main">Get Started</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Manage Students with Simplicity</h1>
+    <p>
+        A clean and powerful student management system to handle records,
+        users, and data efficiently in one place.
+    </p>
+
+    <a asp-area="Identity" asp-page="/Account/Login" class="btn-main">Login</a>
+    <a asp-area="Identity" asp-page="/Account/Register" class="btn-outline">Create Account</a>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+
+    <div class="card">
+        <h4>📚 Student Records</h4>
+        <p>Organize and manage student data easily and efficiently.</p>
+    </div>
+
+    <div class="card">
+        <h4>⚡ Fast System</h4>
+        <p>Optimized ASP.NET Core backend for high performance.</p>
+    </div>
+
+    <div class="card">
+        <h4>🔒 Secure Login</h4>
+        <p>Identity-based authentication protects your system.</p>
+    </div>
+
+    <div class="card">
+        <h4>📊 Easy Tracking</h4>
+        <p>Monitor and manage records in a structured way.</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Student Management System • Built with ASP.NET Core
+</div>

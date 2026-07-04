@@ -1,0 +1,28 @@
+﻿@model mymainproject.Models.CouseModel
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<h2>@((Model?.Id ?? 0) == 0 ? "Add Student" : "Edit Student")</h2>
+
+<form asp-action="Upsert" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Name</label>
+        <input asp-for="CourseName" />
+    </div>
+
+    <div>
+        <label>desc</label>
+        <input asp-for="Description" />
+    </div>
+
+    
+    <button type="submit">
+        @((Model?.Id ?? 0) == 0 ? "Create" : "Update")
+    </button>
+
+</form>
